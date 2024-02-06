@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Retarded Video Player</title>
+    <style>
+      * {
+        font-family: 'Courier New', monospace;
+      }
+
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      #title {
+        background-color: black;
+        font-size: 15px;
+        padding: 5px 10px;
+        opacity: 0;
+      }
+
+      .btn {
+        background-color: teal;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 10px;
+        cursor: pointer;
+        border: none;
+        position: relative;
+        float: right;
+        user-select: none;
+      }
+
+      .title-container {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        color: white;
+        user-select: none;
+      }
+
+      .dot {
+        height: 8px;
+        width: 8px;
+        background-color: orange;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-left: 5px;
+      }
+
+      .blink {
+        animation: pulse 0.8s ease-out infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 4px 0px orange;
+        }
+        50% {
+          box-shadow: 0 0 10px 3px orange;
+        }
+        100% {
+          box-shadow: 0 0 4px 0px orange;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+    <div class="title-container">
+      <div class="dot"></div>
+      <h4 id="title"></h4>
+    </div>
+    <button style="z-index: 1;" class="btn" id="audio-btn">Audio: Off</button>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
